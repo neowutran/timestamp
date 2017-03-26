@@ -19,7 +19,7 @@ module.exports = function TimeStamps(dispatch){
         event.authorName = `</a>${timeStr}][<a href='asfunction:chatNameAction,${event.authorName}@0@0'>${event.authorName}</a>`;
         return true;
     }
-	
+
 	function processEventWhisper(event){
         if(!enabled) return;
         var time = new Date();
@@ -29,6 +29,6 @@ module.exports = function TimeStamps(dispatch){
         return true;
     }
 	//dispatch.hook('sWhisper', processEventWhisper);
-    dispatch.hook('sChat', processEvent);
-    dispatch.hook('sPrivateChat', processEvent);
+    dispatch.hook('S_CHAT', 1, processEvent);
+    dispatch.hook('S_PRIVATE_CHAT', 1, processEvent);
 }
